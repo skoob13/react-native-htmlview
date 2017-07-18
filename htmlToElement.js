@@ -119,7 +119,7 @@ export default function htmlToElement(rawHtml, customOpts = {}, done) {
         let listItemPrefix = null;
         if (node.name === 'li') {
           if (parent.name === 'ol') {
-            listItemPrefix = `${index + 1}. `;
+            listItemPrefix = `${Math.ceil((index + 1)/2)}. `;
           } else if (parent.name === 'ul') {
             listItemPrefix = opts.bullet;
           }
@@ -135,7 +135,7 @@ export default function htmlToElement(rawHtml, customOpts = {}, done) {
             onPress={linkPressHandler}
           >
             {linebreakBefore}
-            {listItemPrefix}
+            <Text style={{ color: '#fff' }}>{listItemPrefix}</Text>
             {domToElement(node.children, node)}
             {linebreakAfter}
           </NodeComponent>
