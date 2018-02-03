@@ -132,7 +132,7 @@ HtmlView.propTypes = {
   renderNode: PropTypes.func,
   RootComponent: PropTypes.func,
   rootComponentProps: PropTypes.object,
-  style: View.propTypes.style,
+  style: PropTypes.any,
   stylesheet: PropTypes.object,
   TextComponent: PropTypes.func,
   textComponentProps: PropTypes.object,
